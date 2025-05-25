@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Icon Favicon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--Boostrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <!--Jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!--Document Title-->
+    <title>Visualize Pathfinding Algorithm</title>
+
+    <!--Custom Style-->
+    <link rel="stylesheet" href="style/dist/style.css">
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <h1 class="text-light"><i class="fa fa-blind"></i> NSPS Advanced Pathfinder</h1>
+        </div>
+    </nav>
+
+    <!--Algorithm Name-->
+    <div class="name">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="title mt-4 text-center py-2 mx-4">
+                        <h1>Breadth First Search</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Display-->
+    <div class="display ">
+        <div class="container pb-4">
+            <div class="row my-4">
+                <div class="col-lg-6">
+                    <div class="board my-4 mx-auto d-flex">
+                        <div class="screen bg-light m-auto ">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="control my-4 mx-auto p-4">
+                        <h1 class="text-center mb-5"> <i class="fa fa-cog fa-spin"></i> Controls</h1>
+                        <!--Choose Algorithm-->
+                        <div class="col-auto my-2">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-9 my-auto">
+                                        <select class="form-select" aria-label="Default select example" id="algorithm">
+                                            <option selected value="1">BFS</option>
+                                            <option value="2">DFS</option>
+                                            <option value="3">Dijkstra</option>
+                                            <option value="4">Floyd Warshall</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="btn btn-dark" id="start">Visualize</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-auto my-4">
+                            <label for="speed" class="form-label">Speed : <span id="speed_dis"> 3 </span></label>
+                            <input type="range" class="form-range dark" min="1" max="5" step="0.5" id="speed">
+                        </div>
+
+                        <div class="col-auto my-4">
+                            <label for="size" class="form-label">Dimension : <span id="size_dis"> 22 </span></label>
+                            <input type="range" class="form-range dark" min="4" max="40" step="1" id="size">
+                        </div>
+
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6  text-center">
+                                    <button class="btn btn-outline-dark" id="clear">Clear</button>
+                                </div>
+                                <div class="col-6  text-center">
+                                    <button class="btn btn-dark" id="wall">Wall</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     
+
+    <!--Slider Card-->
+    <div class="card-grp py-5 my-5">
+        <div class="container">
+            <h1 class="text-center" style="color: white;">SEARCHING ALGORITHM</h1>
+            <div class="row">
+                <div class="col-xl-3 col-md-6 col-sm-12">
+                    <div class="card my-4 mx-auto" style="width: 18rem;">
+                        <img class="card-img-top" src="assests/images/img1.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Breadth First Search</h5>
+                            <p class="card-text">
+                                From the tree root it explores all of the neighbor nodes at the present 
+                                depth prior to moving on to the nodes at next depth level.
+                            </p>
+                            <a href="https://youtu.be/-tgVpUgsQ5k?si=-1u1g3Ccqo2HGJ5X" class="btn btn-primary"> <i class="fa fa-angle-double-right"></i> More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 col-sm-12">
+                    <div class="card my-4 mx-auto" style="width: 18rem;">
+                        <img class="card-img-top" src="assests/images/img2.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Depth First Search</h5>
+                            <p class="card-text">
+                                It starts at the tree root and explores as far as possible 
+                                along each branch in it's descendant before backtracking.
+                            </p>
+                            <a href="https://youtu.be/Qzf1a--rhp8?si=Kq4rfdtmnqOlh0pe" class="btn btn-primary"> <i class="fa fa-angle-double-right"></i> More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 col-sm-12">
+                    <div class="card my-4 mx-auto" style="width: 18rem;">
+                        <img class="card-img-top" src="assests/images/img3.webp" alt="Card image cap" style="height: 214.43px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Dijkstra Algorithm</h5>
+                            <p class="card-text">
+                                For a given source node in the graph, 
+                                the algorithm finds the shortest path between that node and every other.
+                            </p>
+                            <a href="https://youtu.be/lUXl7GnH9xk?si=YGO2LzHhNeOiyT99" class="btn btn-primary"> <i class="fa fa-angle-double-right"></i> More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 col-sm-12">
+                    <div class="card my-4 mx-auto" style="width: 18rem;">
+                        <img class="card-img-top" src="assests/images/img4.png" alt="Card image cap" style="height: 214.43px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Floyd Warshall</h5>
+                            <p class="card-text">
+                                Floyd-Warshall algorithm finds the shortest paths between all pairs of vertices in a weighted graph using dynamic programming.
+                            </p>
+                            <a href="https://youtu.be/h6o6kC5oG2A?si=oAPjYpMbl95YfdDY" class="btn btn-primary"> <i class="fa fa-angle-double-right"></i> More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     
+    <!--Icon-->
+    <div class="icon py-5 my-5">
+        <div class="container text-center">
+            <h1 class="text-center" style="color: white;">FEATURES</h1>
+            <div class="row">
+                <div class="col-lg-4 col-md-12">
+                    <div class="icon-show my-4">
+                        <img class="img-fluid " src="https://www.svgrepo.com/show/27891/location.svg" alt="icon"
+                            width="250px">
+                        <h4 class="my-2" style="color: white;">Shortest Path Visualizer</h4>
+                        <span class="badge rounded-pill bg-dark">Dijkstra Algorithm</span>
+                        <span class="badge rounded-pill bg-dark">Floyd Warshall</span>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-12">
+                    <div class="icon-show my-4">
+                        <img class="img-fluid" src="https://www.svgrepo.com/show/1089/graph.svg" alt="icon"
+                            width="250px">
+                        <h4 class="my-2" style="color: white;">Searching Visualizer</h4>
+                        <span class="badge rounded-pill bg-danger">Breadth First Search</span>
+                        <span class="badge rounded-pill bg-danger">Depth First Search</span>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="icon-show my-4">
+                        <img class="img-fluid" src="https://www.svgrepo.com/show/227055/maze.svg" alt="icon"
+                            width="250px">
+                        
+                        <h4 class="my-2" style="color: white;">Maze Visualization</h4>
+
+                        <span class="badge rounded-pill bg-success">Uniform Weighted Path</span>
+                        <span class="badge rounded-pill bg-success">4 Neighbours</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <div class="footer bg-dark py-4 px-2">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12 ">
+                    <h3>NSPS Pathfinder 2025</h3>
+                </div>
+                <div class="col-12 mt-2">
+                    <i class="mx-2 fa fa-2x fa-instagram "></i>
+                    <i class="mx-2 fa fa-2x fa-youtube-play"></i>
+                    <i class="mx-2 fa fa-2x fa-linkedin-square"></i>
+                    <i class="mx-2 fa fa-2x fa-github"></i>
+                </div>
+                <div class="col-12 mt-2">
+                    <small>&copy; Nikita Mehra </small>
+                    <small>&copy; Suhani Nayak </small>
+                    <small>&copy;Palak Miyan </small>
+                    <small>&copy; Sandhya Negi </small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--Popper Jquery Dependency-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+        integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+        crossorigin="anonymous"></script>
+
+    <script type="module" src="script/script.js"></script>
+
+</body>
+
+</html>
