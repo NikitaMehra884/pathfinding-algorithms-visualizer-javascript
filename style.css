@@ -1,0 +1,158 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #060101e6 !important;
+  }
+  
+  .board {
+    width: 40vw;
+    height: 40vw;
+    background-color: #03020e;
+    border-radius: 25px;
+    background: linear-gradient(145deg, #06051a, #08041e);
+   
+    overflow: hidden;
+  }
+  
+  .unit {
+    background-color: #1d1818;
+    border-radius: 2px;
+    border: 0.1px outset #84abff;
+  }
+  .unit:hover {
+    transform: scale(1.1);
+    transition: 200ms;
+  }
+  
+  .restore {
+    background: #211f1f;
+  }
+  
+  .target {
+    background: #ef150a;
+  }
+  
+  .wall {
+    background: #016efd;
+  }
+  
+  .screen {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .animate {
+    animation: appear 1s;
+    background-color: #f4fd9e;
+  }
+  
+  @keyframes appear {
+    0% {
+      opacity: 0.5;
+      transform: scale(0);
+      border-radius: 50%;
+    }
+    30% {
+      opacity: 0.75;
+      background-color: #f6de0a;
+    }
+    100% {
+      opacity: 1;
+      background-color: #00ff95;
+      transform: scale(1);
+      border-radius: 0px;
+    }
+  }
+  .path {
+    background: #f30606;
+  }
+  
+  .control {
+    width: 40vw;
+    height: 40vw;
+    border-radius: 25px;
+    background: #5673dd;
+    box-shadow: inset 25px 25px 50px #184ec3, inset -25px -25px 50px #347ccf;
+  }
+  
+  .footer {
+    color: #f6f6fafe;
+  }
+  
+  .screen {
+    width: 38vw;
+    height: 38vw;
+    border-radius: 10px;
+  }
+  
+  .title {
+    border-radius: 20px;
+    background: linear-gradient(145deg, #e6d7d7, #ddcbcb);
+ 
+  }
+  
+  .card {
+    opacity: 0.75;
+  }
+  .card:hover {
+    box-shadow: 5px 5px 20px #e4dfdf;
+    opacity: 1;
+    transition: 300ms;
+  }
+  
+  .fa:hover {
+    transform: rotate(360deg);
+    transition: 1s;
+  }
+  
+  .fa-youtube-play:hover {
+    color: #ff5555;
+  }
+  
+  .fa-linkedin-square:hover {
+    color: #2ea9fa;
+  }
+  
+  .fa-instagram {
+    border-radius: 10px;
+  }
+  .fa-instagram:hover {
+    background-image: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  }
+  
+  @media screen and (max-width: 992px) {
+    .board, .control {
+      width: 75vw;
+      height: 75vw;
+    }
+  
+    .screen {
+      width: 70vw;
+      height: 70vw;
+    }
+  }
+  @media screen and (max-width: 520px) {
+    .control {
+      border-radius: 0px;
+      background: none;
+      box-shadow: none;
+    }
+    @media screen and (max-width: 340px) {
+      .card-grp {
+        display: none;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    .card-grp {
+      margin-top: 30px;
+    }
+    .icon {
+      margin-top: 100px;
+    }
+  }
